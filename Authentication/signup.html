@@ -13,15 +13,26 @@
             <div class="main">
                 <div class="content">
                     <h2>Create Account</h2>
-                    <form action="#" method="post">
-                        <input type="text" name="username" placeholder="User Name" required autofocus="">
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-                        <button class="btn" type="submit">
-                            Sign Up
-                        </button>
+                    <form action="/signup" method="post">
+                        <input type="text" name="username" placeholder="User Name" required autofocus aria-label="User Name">
+                        <input type="email" name="email" placeholder="Email" required aria-label="Email">
+                        <input type="password" id="password" name="password" placeholder="Password" required aria-label="Password">
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required aria-label="Confirm Password">
+                        <small id="passwordHelp" class="form-text">Ensure your password has at least 8 characters, a number, and a symbol.</small>
+                        <button class="btn" type="submit">Sign Up</button>
                     </form>
+                    <script>
+                      // Adding basic client-side password matching validation
+                      document.querySelector('form').addEventListener('submit', function(e) {
+                          const password = document.getElementById('password').value;
+                          const confirmPassword = document.getElementById('confirm_password').value;
+                          if (password !== confirmPassword) {
+                              e.preventDefault();
+                              alert('Passwords do not match. Please try again.');
+                          }
+                      });
+                    </script>
+                    
                     <p class="account">Already have an account? <a href="login.html">Log In</a></p>
                 </div>
                 <div class="form-img">

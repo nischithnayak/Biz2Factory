@@ -13,13 +13,12 @@
             <div class="main">
                 <div class="content">
                     <h2>Log In</h2>
-                    <form action="#" method="post">
-                        <input type="text" name="username" placeholder="User Name" required autofocus="">
-                        <input type="password" name="password" placeholder="User Password" required>
-                        <button class="btn" type="submit">
-                            Login
-                        </button>
+                    <form action="/login" method="post">
+                        <input type="text" name="username" placeholder="User Name" required autofocus aria-label="User Name">
+                        <input type="password" name="password" placeholder="User Password" required aria-label="Password">
+                        <button class="btn" type="submit">Login</button>
                     </form>
+                    
                     <p class="account">Don't Have An Account? <a href="signup.html">Register</a></p>
                 </div>
                 <div class="form-img">
